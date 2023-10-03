@@ -15,14 +15,14 @@ Below is a comparaison of the performance of the MedSAM model before and after b
 - The image on the right is the same lung slice passed into the fine-tuned MedSAM model. The dice coefficient significantly improved and has now reached 0.873. 
 
 ## Preliminary results
-I started by training MedSam on a subset of the LIDC-IDRI dataset. This subset of data only included tumours larger than 14mm which resulted in a dataset of 550 lung slices. After performing 5 fold cross validation, I found that the model performs with an average of 0.893 dice coefficient. These results seem quite promising for my next step which is to train MedSAM on the full lidcidri dataset with tumors larger or equal to 3mm which represents about 10 500 lung images. 
+I started by training MedSam on a subset of the LIDC-IDRI dataset. This subset of data only included tumours larger than 14mm which resulted in a dataset of 550 lung slices. After performing 5 fold cross validation, I found that the model performs with an average of 0.893 dice coefficient. These results seem quite promising for my next step which is to train MedSAM on the full lidcidri dataset for tumors larger or equal to 3mm which represents about 10 500 lung images. 
 
-These results where obtained by only training the model on slices of the 3D lung scan that contained tumours. However, I ultimately want the model to take in as input the 3D lung scan which will also include lung slices that do not contain any tumors.
+However, these preliminary results where obtained by training the model only on lung slices that contained tumours. It is important to note that I ultimately want the model to take in as input the entire 3D lung scan which will inevitably also include lung slices that do not contain any tumors. Next steps are detailed below.
 
 ## Next Steps
 ### Further preprocessing
-- As mentioned above, the goal is that the model performs well on lung slices that contain and do not contain tumors. I am working on balancing the dataset to contain 60 % of the paired lung slices and annotations with no tumours and 40 % to contain tumours.
-- Filter any 'closed' lung images which reside at the beginning and the end of the slice where the lung begins to close.
+- As mentioned above, the goal is that the model performs well both on lung slices that contain and do not contain tumors. I am working on balancing the dataset to contain 60 % of the paired lung slices and annotations with no tumours and 40 % to contain tumours.
+- Additionally, filtering 'closed' lung images which reside at the beginning and the end of the slice where the lung begins to close will enhance the efficiency of the model.
   
 ### Widening the scope
 I am currently working on training MedSAM on the full lidcidri dataset with tumors larger or equal to 3mm which represents about 10 500 lung images.
