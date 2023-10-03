@@ -1,5 +1,5 @@
 # TumorSegMedSam
-This repository includes code and a description of a novel tumor segmentation algorithm by fine-tuning Meta's foundational model MedSAM on the publicly available dataset LIDC-IDRI. *The code for this project is available upon request.*
+This README is a description of a tumor segmentation model I developed by fine-tuning Meta's foundational model MedSAM on the publicly available dataset LIDC-IDRI. *The code for this project is available upon request.*
 
 ## Preprocessing 
 In order to make the publicly available LIDC-IDRI dataset compatible with Meta's foundational model MedSAM, preprocessing was required. Multiple issues had to be tackled:
