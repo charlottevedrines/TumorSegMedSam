@@ -1,12 +1,10 @@
 # TumorSegMedSam
-This README is a description of a tumor segmentation model I developed by fine-tuning Meta's foundational model MedSAM on the publicly available dataset LIDC-IDRI. *The code for this project is available upon request.*
+This repository provides code and described a deep learning tumor segmentation model I developed by fine-tuning Meta's foundational model MedSAM on the publicly available dataset LIDC-IDRI. 
 
 ## Preprocessing 
 In order to make the publicly available LIDC-IDRI dataset compatible with Meta's foundational model MedSAM, preprocessing was required. Multiple issues had to be tackled:
-- The transformation of the 3D lung dicom file to 2D images
-- Filter any 'closed' lung images. In other words, removing the lung image slices at the beginning and the end of the slice where the lung begins to close. 
+- The transformation of the 3D lung dicom file to 2D images.
 - Matching the lung scan images to their corresponding annotation (labels).
-- Balancing the dataset to contain 60 % of the paired lung slices and annotations to not contain tumours and 40 % to contain tumours.
 
 ## Visualization
 Below is a comparaison of the performance the MedSAM before and after being fine-tuned on a subset of the LIDC-IDRI data (240 lung slices, about 2.5% of the total dataset).
@@ -19,6 +17,10 @@ Below is a comparaison of the performance the MedSAM before and after being fine
 I started by training in on a subset of the LIDC-IDRI dataset for tumours larger than 14mm which resulted in a dataset of 550 lung slices. After performing 5 fold cross validation, I found that the model performs with an average of 0.893 dice coefficient.
 
 ## Next Steps
+### Further preprocessing
+- Filter any 'closed' lung images. In other words, removing the lung image slices at the beginning and the end of the slice where the lung begins to close.
+- Balancing the dataset to contain 60 % of the paired lung slices and annotations to not contain tumours and 40 % to contain tumours.
+### Widening the scope
 I am currently working on trainin MedSAM on the full lidcidri dataset with tumors larger or equal to 3mm which represents about 10 500 lung images.
 
 ## Awknowledgments
