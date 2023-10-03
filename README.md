@@ -42,7 +42,7 @@ This code will run on cpu. Change ```pre_gre_rgb2D.py``` and ```DL_model.py``` a
 5. Enter the MedSAM folder ```cd MedSAM``` and run ```pip install -e```
 
 ## Running the model
-Download the[model checkpoint]([url](https://drive.google.com/file/d/1tKd7p3cLVzvF3B4fpopijwNo2LSbKNWV/view?usp=drive_link)) and place it in ```work_dir/SAM/```
+Download the [model checkpoint]([url](https://drive.google.com/file/d/1tKd7p3cLVzvF3B4fpopijwNo2LSbKNWV/view?usp=drive_link)) and place it in ```work_dir/SAM/```
 
 To start, run the script ```CentralScript_g.py```. This will run the model on a sample of the LIDC-IDRI dataset included in this repository.
 
