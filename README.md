@@ -21,14 +21,17 @@ I started by training in on a subset of the LIDC-IDRI dataset for tumours larger
 - Filter any 'closed' lung images. In other words, removing the lung image slices at the beginning and the end of the slice where the lung begins to close.
 - Balancing the dataset to contain 60 % of the paired lung slices and annotations to not contain tumours and 40 % to contain tumours.
 ### Widening the scope
-I am currently working on trainin MedSAM on the full lidcidri dataset with tumors larger or equal to 3mm which represents about 10 500 lung images.
+I am currently working on training MedSAM on the full lidcidri dataset with tumors larger or equal to 3mm which represents about 10 500 lung images.
 
 ## Awknowledgments
 - Thank you to Meta AI for making the foundational model MedSAM publically available. The link to its official [repository]([url](https://github.com/bowang-lab/MedSAM)https://github.com/bowang-lab/MedSAM)
 - I am also grateful to have been able to use the open-source Lung Image Database Consortium image collection (LIDC-IDRI) to finetune this model. Access the dataset [here]([url](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=1966254)https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=1966254)
 
 # Running the code
-Clone this repository:
-```
-git clone 
-```
+
+## Installation
+1. Create a virtual environment ```conda create -n medsamtumour python=3.10 -y``` and activate it ```conda activate medsamtumour```
+2. ```Install Pytorch 2.0```
+3. ```git clone https://github.com/charlottevedrines/TumorSegMedSam```
+4. Enter the MedSAM folder ```cd MedSAM``` and run ```pip install -e```
+
