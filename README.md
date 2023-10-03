@@ -1,4 +1,4 @@
-# TumorSegMedSam
+# Description 
 This repository provides code and described a deep learning tumor segmentation model I developed by fine-tuning Meta's foundational model MedSAM on the publicly available dataset LIDC-IDRI. 
 
 ## Preprocessing 
@@ -27,3 +27,8 @@ I am currently working on trainin MedSAM on the full lidcidri dataset with tumor
 - Thank you to Meta AI for making the foundational model MedSAM publically available. The link to its official [repository]([url](https://github.com/bowang-lab/MedSAM)https://github.com/bowang-lab/MedSAM)
 - I am also grateful to have been able to use the open-source Lung Image Database Consortium image collection (LIDC-IDRI) to finetune this model. Access the dataset [here]([url](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=1966254)https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=1966254)
 
+# Running the code
+Clone this repository:
+```
+git clone 
+```
