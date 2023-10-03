@@ -32,6 +32,7 @@ I am currently working on training MedSAM on the full lidcidri dataset with tumo
 - I am also grateful to have been able to use the open-source Lung Image Database Consortium image collection (LIDC-IDRI) to finetune this model. Access the dataset [here]([url](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=1966254)https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=1966254)
 
 # Running the code
+This code will run on cpu. Change ```pre_gre_rgb2D.py``` and ```DL_model.py``` appropriately to run this model on GPU.
 
 ## Installation
 1. Create a virtual environment ```conda create -n medsamtumour python=3.10 -y``` and activate it ```conda activate medsamtumour```
