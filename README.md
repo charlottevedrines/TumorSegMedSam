@@ -35,3 +35,6 @@ I am currently working on training MedSAM on the full lidcidri dataset with tumo
 3. ```git clone https://github.com/charlottevedrines/TumorSegMedSam```
 4. Enter the MedSAM folder ```cd MedSAM``` and run ```pip install -e```
 
+## Running the model
+To start, run the script ```CentralScript_g.py```. This will run the model on a sample of the LIDC-IDRI dataset included in this repository.
+
