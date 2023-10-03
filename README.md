@@ -9,9 +9,11 @@ In order to make the publicly available LIDC-IDRI dataset compatible with Meta's
 - Balancing the dataset to contain 60 % of the paired lung slices and annotations to not contain tumours and 40 % to contain tumours.
 
 ## Visualization
-![visualization](https://github.com/charlottevedrines/TumorSegMedSam/assets/97196465/83b0eb68-cd5d-47ce-b387-be0446a88778)
 Below is a comparaison of the performance the MedSAM before and after being fine-tuned on a subset of the LIDC-IDRI data (240 lung slices, about 2.5% of the total dataset).
-The image of the left is the ground truth. The image in the middle is a lung slice passed in MedSAM with no finetuning and results in a dice coefficent of 0.6. The image on the right is the same lung slice passed in the fine-tuned MedSAM. The dice coefficient significantly improved and has now reached 0.89. 
+![visualization](https://github.com/charlottevedrines/TumorSegMedSam/assets/97196465/83b0eb68-cd5d-47ce-b387-be0446a88778)
+- The image of the left is the ground truth.
+- The image in the middle is a lung slice passed in MedSAM with no finetuning and results in a dice coefficent of 0.6.
+- The image on the right is the same lung slice passed in the fine-tuned MedSAM. The dice coefficient significantly improved and has now reached 0.89. 
 
 ## Preliminary results
 I started by training in on a subset of the LIDC-IDRI dataset for tumours larger than 14mm which resulted in a dataset of 550 lung slices. After performing 5 fold cross validation, I found that the model performs with an average of 0.893 dice coefficient.
