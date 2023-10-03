@@ -36,8 +36,9 @@ I am currently working on training MedSAM on the full lidcidri dataset with tumo
 ## Installation
 1. Create a virtual environment ```conda create -n medsamtumour python=3.10 -y``` and activate it ```conda activate medsamtumour```
 2. ```Install Pytorch 2.0```
-3. ```git clone https://github.com/charlottevedrines/TumorSegMedSam```
-4. Enter the MedSAM folder ```cd MedSAM``` and run ```pip install -e```
+3. ```pip install monai```
+4. ```git clone https://github.com/charlottevedrines/TumorSegMedSam```
+5. Enter the MedSAM folder ```cd MedSAM``` and run ```pip install -e```
 
 ## Running the model
 To start, run the script ```CentralScript_g.py```. This will run the model on a sample of the LIDC-IDRI dataset included in this repository.
