@@ -28,7 +28,7 @@ However, these preliminary results where obtained by training the model only on 
 I am currently working on training MedSAM on the full lidcidri dataset with tumors larger or equal to 3mm which represents about 10 500 lung images.
 
 ## Awknowledgments
-- Thank you to Meta AI for making the foundational model MedSAM publically available. The link to its official [repository](https://github.com/bowang-lab/MedSAM)https://github.com/bowang-lab/MedSAM)
+- Thank you to Meta AI for making the foundational model MedSAM publically available. The link to its official [repository](https://github.com/bowang-lab/MedSAM)
 - I am also grateful to have been able to use the open-source Lung Image Database Consortium image collection (LIDC-IDRI) to finetune this model. Access the dataset [here](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=1966254)
 
 # Running the code
