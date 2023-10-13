@@ -39,9 +39,7 @@ def save_slices_as_png(dcm_path, output_directory, ct_path_updated):
 
             # Get corresponding SOP Instance UID
             sop_instance_uid = extract_sop_instance_uids_SEG(dcm_path, i)
-            #print("extracted SOP UID of the raw image slice: ", sop_instance_uid)
             file_name = compare_CT_SEG(sop_instance_uid, ct_path_updated)
-#            print(f"Axial Slice {i}: SOP Instance UID: {sop_instance_uid}")
             # Save the resized binary slice as PNG
             output_path = os.path.join(output_directory, f"{patient_number}_{file_name}.png")
             cv2.imwrite(output_path, resized_slice)
@@ -84,7 +82,6 @@ def compare_CT_SEG(sop_instance_uid, ct_path_updated):
             for subsubfolder in os.listdir(subfolder_path):
                 if os.path.isdir(os.path.join(subfolder_path, subsubfolder)) and ("NA" in subsubfolder or "NLST" in subsubfolder or  "CHEST" in subsubfolder or "EASE" in subsubfolder or "BOTTOM" in subsubfolder or "ACRIN" in subsubfolder or "Recon" in subsubfolder or "Chest" in subsubfolder or "Thor" in subsubfolder):
                     subsubfolder_path = os.path.join(subfolder_path, subsubfolder)
-                  # print("subsubfolder_path ", subsubfolder_path)
     
                     # Iterate over the DICOM files in the input folder
                     for filename in os.listdir(subsubfolder_path):
@@ -96,10 +93,7 @@ def compare_CT_SEG(sop_instance_uid, ct_path_updated):
                             
                             # Check if the Image SOP UID matches the desired UID
                             if ds.SOPInstanceUID == sop_instance_uid:
-                                # print("annotation SOP UID: ", ds.SOPInstanceUID )
-                                # print("SOP UID of the annotation slice matches with the image SOP UID !")
                                 file_name = file_path.split("/")[-1]
-
                                 file_name_f = file_name.split(".")[0]
                                 seg_name = seg_path.split("/")[-1]
                             
@@ -115,8 +109,6 @@ def process_directory(input_dir):
 
     # Iterate over subdirectories
     for i, subdirectory in enumerate(subdirectories, start=1):
-       # print("subdirectory ", subdirectory)
-
 
         # Finding the what patient number we're dealing with
         last_dash_index = subdirectory.rfind("/")  # Find the index of the last dash
@@ -144,28 +136,21 @@ def process_directory(input_dir):
 
             # Iterate over subsubsubdirectories
             for subsubsubcategory in subsubsubdirectories:
-               # print("subsubsubcategory ", subsubsubcategory)
                 # Get a list of DICOM files in the current subsubsubcategory directory
                 dcm_files = [f.path for f in os.scandir(subsubsubcategory) if f.is_file() and f.name.endswith('.dcm')]
-
 
                 # get the .dcm number
                 for i in range(len(dcm_files)):
                     dcm_nb = dcm_files[i].split("/")[-1]
-                
-               # print("dcm_files ", dcm_files[0])
+         
                 # Get the base name without the extension using os.path.basename()
                 file_name = os.path.basename(str(dcm_files[0]))
                 file_name_without_extension = os.path.splitext(file_name)[0]
-              #  print("file_name_without_extension ", file_name_without_extension)
             
                 # Iterate over DICOM files
                 for dcm_file in dcm_files:
                     # Process each DICOM file and save slices as PNG
                     save_slices_as_png(dcm_file, output_directory, ct_path_updated)
-
-
-        #print(f"slices saved as PNG in output{i}.")
 
 
 
